@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import CardListing from './components/CardListing';
-import FilterDropdown from './components/FilterDropdown';
 
-const App = () => {
+function App() {
   const [filter, setFilter] = useState('');
 
   const handleFilterChange = (selectedFilter) => {
@@ -25,11 +24,11 @@ const App = () => {
           </li>
         </ul>
       </nav>
-      <FilterDropdown onFilterChange={handleFilterChange} />
+      {/* <FilterDropdown onFilterChange={handleFilterChange} /> */}
       <CardListing filter={filter} />
       {/* Add routes for other tabs (Your Cards, All Cards, Blocked Cards) */}
     </div>
   );
-};
+}
 
 export default App;
