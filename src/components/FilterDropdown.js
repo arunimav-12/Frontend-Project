@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
-const FilterDropdown = () => {
+const FilterDropdown = ({ onFilterChange }) => {
   const [selectedFilter, setSelectedFilter] = useState('');
 
   const handleFilterChange = (event) => {
-    setSelectedFilter(event.target.value);
+    const filter = event.target.value;
+    setSelectedFilter(filter);
+    onFilterChange(filter);
   };
 
   return (
